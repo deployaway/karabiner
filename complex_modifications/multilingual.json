@@ -1,0 +1,66 @@
+{
+    "title": "@deployaway: Multi-lingual",
+    "rules": [
+        {
+            "description": "[@deployaway: Multi-lingual] |Left Shift + Left Alt| -> |Left Shift + Left Alt + F4| = prev. input source",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_shift",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_alt"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift",
+                            "modifiers": [
+                                "left_alt"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "f4",
+                            "modifiers": [
+                                "left_alt",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_alt",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_alt",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "f4",
+                            "modifiers": [
+                                "left_alt",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

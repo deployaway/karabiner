@@ -1,0 +1,26 @@
+{
+    "title": "@deployaway: Snagit",
+    "rules": [
+        {
+            "description": "[@deployaway: Snagit] |PrintScreen (F13)| -> |PrintScreen(F13) + Left Alt + Left Shift| = Snagit Capture",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "print_screen"
+                    },
+                    "to_if_alone": [
+                        {
+                            "repeat": true,
+                            "key_code": "print_screen",
+                            "modifiers": [
+                                "left_alt",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

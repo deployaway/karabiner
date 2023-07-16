@@ -1,0 +1,187 @@
+{
+    "title": "@deployaway: Copy/Cut/Paste/Save/Undo/etc.",
+    "rules": [
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + C| -> |Left Cmd + C| = copy",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "to_if_held_down": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500,
+                        "basic.to_if_held_down_threshold_milliseconds": 500
+                    }
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + V| -> |Left Cmd + V| = paste",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "v",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + X| -> |Left Cmd + X| = cut",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "x",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + S| -> |Left Cmd + S| = save",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "s",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + Z| -> |Left Cmd + Z| = undo",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "z",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Left Ctrl + Left Shift + Z| -> |Left Cmd + Left Shift + Z| = redo",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "z",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Copy/Cut/Paste/Save/Undo/etc.] |Ctrl + A| -> |Cmd + A| = select all",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

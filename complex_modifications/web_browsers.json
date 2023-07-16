@@ -1,0 +1,239 @@
+{
+    "title": "@deployaway: Web Browsers",
+    "rules": [
+        {
+            "description": "[@deployaway: Web Browsers] |Left Ctrl + Left Shift + N| + |Left Cmd + Left Shift + N| = new private/incognito tab",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control",
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "n",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Web Browsers] |Left Ctrl + W| => |Cmd + W| = close tab",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "w",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Web Browsers] |Left Ctrl + T| -> |Left Cmd + T| = new tab",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control",
+                            "lazy": true
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "t",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Web Browsers] |F5| -> |Left Cmd + R| = reload page",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f5"
+                    },
+                    "to_after_key_up": [
+                        {
+                            "key_code": "r",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Web Browsers] |Left Ctrl + F5| -> |Left Cmd + Left Shift + R| = clear cache and reload page",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f5",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "r",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Web Browsers] |Ctrl + H| -> |Left Cmd + Y| = history",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "y",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge",
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.brave\\.Browser$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

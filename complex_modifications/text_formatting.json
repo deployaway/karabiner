@@ -1,0 +1,119 @@
+{
+    "title": "@deployaway: Text Formatting",
+    "rules": [
+        {
+            "description": "[@deployaway: Text Formatting] |Ctrl + B| -> |Cmd + B| = bold",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "b",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^org\\.macports\\.X11$",
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^co\\.zeit\\.hyper$",
+                                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                "^com\\.microsoft\\.rdc\\.macos$",
+                                "^tv\\.parsec\\.www$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Text Formatting] |Ctrl + I| -> |Cmd + I| = italic",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "i",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "i",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^org\\.macports\\.X11$",
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^co\\.zeit\\.hyper$",
+                                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                "^com\\.microsoft\\.rdc\\.macos$",
+                                "^tv\\.parsec\\.www$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Text Formatting] |Ctrl + U| -> |Cmd + U| = underline",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^org\\.macports\\.X11$",
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^co\\.zeit\\.hyper$",
+                                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                "^com\\.microsoft\\.rdc\\.macos$",
+                                "^tv\\.parsec\\.www$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
