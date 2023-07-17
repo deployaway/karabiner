@@ -4,7 +4,8 @@ Complex modifications for [Karabiner-Elements on MacOS](https://karabiner-elemen
 
 ## Installation
 
-After installing Karabiner-Elements, copy the contents of `complex_modifications` folder into `~/.config/karabiner/assets/complex_modifications`
+1. After installing Karabiner-Elements, copy the contents of `complex_modifications` folder into `~/.config/karabiner/assets/complex_modifications`.
+2. Open Karabiner-Elements settings, and enable the modifications under the "Complex Modifications" tab.
 
 ## Modification categories
 
