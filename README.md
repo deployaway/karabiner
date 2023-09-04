@@ -32,3 +32,4 @@ Complex modifications for [Karabiner-Elements on MacOS](https://karabiner-elemen
   - > `F5` to refresh a web page, and `Ctrl+F5` to refresh one without using cache
   - > `Ctrl+Shift+N` to open private/incognito windows
   - > `Ctrl+H` to open browser history
+  - > `Ctrl+J` to open browser downloads
