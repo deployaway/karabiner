@@ -234,6 +234,107 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "[@deployaway: Chrome/Safari] |Ctrl + J| -> |Left Cmd + Left Option + L| = downloads",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "l",
+                            "modifiers": [
+                                "left_command",
+                                "left_alt"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.google\\.Chrome$",
+                                "^com\\.apple\\.Safari$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Firefox/Edge] |Ctrl + J| -> |Left Cmd + J| = downloads",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "j",
+                            "modifiers": [
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^org\\.mozilla\\.firefox$",
+                                "^org\\.mozilla\\.nightly$",
+                                "^com\\.microsoft\\.Edge"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "[@deployaway: Brave Browser] |Ctrl + J| -> |Left Cmd + Left Shift + J| = downloads",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "j",
+                            "modifiers": [
+                                "left_command",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.brave\\.Browser$"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
