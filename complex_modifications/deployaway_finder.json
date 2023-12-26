@@ -1,217 +1,224 @@
 {
-    "title": "@deployaway: Finder",
-    "rules": [
+  "title": "@deployaway: Finder",
+  "rules": [
+    {
+      "description": "Finder |Cmd+E| = open Finder search (Alt+Cmd+Space)",
+      "manipulators": [
         {
-            "description": "[@deployaway: Finder] |Left Cmd + E| -> |Left Alt + Left Cmd + Space| = open finder search",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "e",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_command"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "spacebar",
-                            "modifiers": [
-                                "left_command",
-                                "left_alt"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.apple\\.finder$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |F2| -> |Return| = rename",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "return_or_enter"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.apple\\.finder$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |Del| -> |Left Cmd + Backspace| = delete",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "delete_forward"
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "delete_or_backspace",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.apple\\.finder$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |Left Alt + Tab| -> |Left Ctrl + Up Arrow| = Mission Control",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "tab",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_alt"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "up_arrow",
-                            "modifiers": [
-                                "left_control"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |Left Ctrl + W| => |Cmd + W| = close document/tab",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "w",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "w",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.apple\\.finder$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |Left Ctrl + T| -> |Left Cmd + T| = new tab",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "t",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "t",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.apple\\.finder$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: Finder] |Left Ctrl + F| -> |Left Cmd + F| = find",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "f",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "f",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^org\\.macports\\.X11$",
-                                "^com\\.apple\\.Terminal$",
-                                "^com\\.googlecode\\.iterm2$",
-                                "^co\\.zeit\\.hyper$",
-                                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
-                                "^com\\.microsoft\\.rdc\\.macos$",
-                                "^tv\\.parsec\\.www$",
-                                "^com\\.facebook\\.fbvscode$",
-                                "^com\\.microsoft\\.VSCode$"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": ["command", "alt"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "description": "Finder |F2| = rename (Return)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f2"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Del|->|Cmd+Backspace| = delete",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_forward"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Alt+Tab|->|Cmd+Tab| = App Switcher",
+
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["option"]
+            }
+          },
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          },
+          "to_if_alone": [
+            {
+              "key_code": "tab",
+              "modifiers": ["command"],
+              "halt": true
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_canceled": [
+              {
+                "key_code": "tab"
+              }
+            ]
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "tab",
+              "modifiers": ["command"],
+              "repeat": false,
+              "halt": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Cmd+Tab|->|Ctrl+Up Arrow| = Mission Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": ["control"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Ctrl+W| => |Cmd+W| = close document/tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Ctrl+T|->|Left Cmd+T| = new tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "t",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Finder |Ctrl+F|->|Left Cmd+F| = find",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.macports\\.X11$",
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$",
+                "^tv\\.parsec\\.www$",
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

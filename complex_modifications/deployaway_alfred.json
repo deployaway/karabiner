@@ -1,47 +1,40 @@
 {
-    "title": "@deployaway: Alfred",
-    "rules": [
+  "title": "@deployaway: Alfred",
+  "rules": [
+    {
+      "description": "Alfred |Ctrl+Space| = Alfred (Ctrl+Shift+Pause/F15)",
+      "manipulators": [
         {
-            "description": "[@deployaway: Alfred] |Left Ctrl + Space| -> |Right Ctrl + Right Shift + Pause(F15)| = open Alfred",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "spacebar",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "f15",
-                            "modifiers": [
-                                "right_shift",
-                                "right_control"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "modifiers": {
-                            "mandatory": [
-                                "left_command"
-                            ]
-                        },
-                        "key_code": "spacebar"
-                    },
-                    "to": [
-                        {
-                            "repeat": true,
-                            "key_code": "spacebar"
-                        }
-                    ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f15",
+              "modifiers": ["shift", "control"]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": ["left_command"]
+            },
+            "key_code": "spacebar"
+          },
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "spacebar"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

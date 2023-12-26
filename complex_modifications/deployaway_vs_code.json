@@ -1,106 +1,146 @@
 {
-    "title": "@deployaway: VS Code",
-    "rules": [
+  "title": "@deployaway: VS Code",
+  "rules": [
+    {
+      "description": "VS Code |Ctrl+P| = open command palette (Cmd+Shift+P)",
+      "manipulators": [
         {
-            "description": "[@deployaway: VS Code] |Left Ctrl + P| -> |Left Cmd + Left Shift + P| = open command palette",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "p",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "p",
-                            "modifiers": [
-                                "left_shift",
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.facebook\\.fbvscode$",
-                                "^com\\.microsoft\\.VSCode$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: VS Code] |Left Ctrl + F| -> |Left Cmd + F| = find",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "f",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "f",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.facebook\\.fbvscode$",
-                                "^com\\.microsoft\\.VSCode$"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "[@deployaway: VS Code] |Left Ctrl + H| -> |Left Cmd + Left Alt + F| = replace",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "h",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to_if_alone": [
-                        {
-                            "key_code": "f",
-                            "modifiers": [
-                                "left_command",
-                                "left_alt"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com\\.facebook\\.fbvscode$",
-                                "^com\\.microsoft\\.VSCode$"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "p",
+              "modifiers": ["shift", "command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "description": "VS Code |Ctrl+F| = find (Left Cmd+F)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f",
+              "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VS Code |Ctrl+H| = replace (Left Cmd+Left Alt+F)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f",
+              "modifiers": ["left_command", "left_alt"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VS Code |Ctrl+W| = close tab (Cmd+W)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VS Code |F2| = rename (Return)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f2"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.facebook\\.fbvscode$",
+                "^com\\.microsoft\\.VSCode$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

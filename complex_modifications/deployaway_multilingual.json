@@ -1,66 +1,52 @@
 {
-    "title": "@deployaway: Multi-lingual",
-    "rules": [
+  "title": "@deployaway: Input Language",
+  "rules": [
+    {
+      "description": "Input Language |Shift+Alt| = prev. input (Shift+Alt+F4)",
+      "manipulators": [
         {
-            "description": "[@deployaway: Multi-lingual] |Left Shift + Left Alt| -> |Left Shift + Left Alt + F4| = prev. input source",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "left_shift",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_alt"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_shift",
-                            "modifiers": [
-                                "left_alt"
-                            ]
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "f4",
-                            "modifiers": [
-                                "left_alt",
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "left_alt",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_alt",
-                            "modifiers": [
-                                "left_shift"
-                            ]
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "f4",
-                            "modifiers": [
-                                "left_alt",
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "shift",
+            "modifiers": {
+              "mandatory": ["alt"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "shift",
+              "modifiers": ["alt"]
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "f4",
+              "modifiers": ["alt", "shift"]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "alt",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "alt",
+              "modifiers": ["shift"]
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "f4",
+              "modifiers": ["alt", "shift"]
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
