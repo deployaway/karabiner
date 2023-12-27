@@ -17,6 +17,16 @@
               "key_code": "f15",
               "modifiers": ["shift", "control"]
             }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "is_built_in_keyboard": false
+                }
+              ]
+            }
           ]
         },
         {
@@ -31,6 +41,36 @@
             {
               "repeat": true,
               "key_code": "spacebar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Alfred |Fn+Space| = Alfred (Ctrl+Shift+Pause/F15)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f15",
+              "modifiers": ["shift", "control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
             }
           ]
         }
