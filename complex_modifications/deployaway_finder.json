@@ -62,19 +62,12 @@
               "key_code": "delete_or_backspace",
               "modifiers": ["command"]
             }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com\\.apple\\.finder$"]
-            }
           ]
         }
       ]
     },
     {
       "description": "Finder |Alt+Tab|->|Cmd+Tab| = App Switcher",
-
       "manipulators": [
         {
           "type": "basic",
