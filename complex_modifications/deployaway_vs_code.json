@@ -31,35 +31,6 @@
       ]
     },
     {
-      "description": "VS Code |Ctrl+F| = find (Left Cmd+F)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "f",
-            "modifiers": {
-              "mandatory": ["control"]
-            }
-          },
-          "to_if_alone": [
-            {
-              "key_code": "f",
-              "modifiers": ["command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.facebook\\.fbvscode$",
-                "^com\\.microsoft\\.VSCode$"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "VS Code |Ctrl+H| = replace (Left Cmd+Left Alt+F)",
       "manipulators": [
         {

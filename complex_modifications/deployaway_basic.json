@@ -1,5 +1,5 @@
 {
-  "title": "@deployaway: Basic Operations",
+  "title": "@deployaway: Basic Operations (MacOS-wide)",
   "rules": [
     {
       "description": "Basic Ops |Ctrl+C| = copy (Cmd+C)",
@@ -146,6 +146,125 @@
             {
               "key_code": "a",
               "modifiers": ["command"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Basic Ops |Cmd+E| = open Finder search (Alt+Cmd+Space)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": ["command", "alt"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.apple\\.finder$"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Basic Ops |Alt+Tab|->|Cmd+Tab| = App Switcher",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["option"]
+            }
+          },
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          },
+          "to_if_alone": [
+            {
+              "key_code": "tab",
+              "modifiers": ["command"],
+              "halt": true
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_canceled": [
+              {
+                "key_code": "tab"
+              }
+            ]
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "tab",
+              "modifiers": ["command"],
+              "repeat": false,
+              "halt": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Basic Ops |Cmd+Tab|->|Ctrl+Up Arrow| = Mission Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": ["control"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Basic Ops |Ctrl+F|->|Cmd+F| = find",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f",
+              "modifiers": ["command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.macports\\.X11$",
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$",
+                "^tv\\.parsec\\.www$"
+              ]
             }
           ]
         }
