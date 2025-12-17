@@ -9,40 +9,40 @@
           "from": {
             "key_code": "shift",
             "modifiers": {
-              "mandatory": ["alt"]
+              "mandatory": ["option"]
             }
           },
           "to": [
             {
               "key_code": "shift",
-              "modifiers": ["alt"]
+              "modifiers": ["option"]
             }
           ],
           "to_if_alone": [
             {
               "key_code": "f4",
-              "modifiers": ["alt", "shift"]
+              "modifiers": ["option", "shift"]
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "alt",
+            "key_code": "option",
             "modifiers": {
               "mandatory": ["shift"]
             }
           },
           "to": [
             {
-              "key_code": "alt",
+              "key_code": "option",
               "modifiers": ["shift"]
             }
           ],
           "to_if_alone": [
             {
               "key_code": "f4",
-              "modifiers": ["alt", "shift"]
+              "modifiers": ["option", "shift"]
             }
           ]
         }
